@@ -29,7 +29,7 @@ Terminal=false
 Exec=env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 $HOME/eagle-$EAGLE_VER/eagle
 Name=Eagle
 Comment=Eagle
-Icon=/$HOME/eagle-$EAGLE_VER/bin/eagle-logo.png
+Icon=$HOME/eagle-$EAGLE_VER/bin/eagle-logo.png
 " | tee "$EAGLE_DESKTOP" "$EAGLE_MENU" >/dev/null  # Cria ícones
 chmod +x "$EAGLE_DESKTOP"                        # Torna o atalho executável
 gio set "$EAGLE_DESKTOP" "metadata::trusted" yes # Marca arquivo de atalho como confiável
