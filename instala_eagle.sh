@@ -26,7 +26,7 @@ Version=$EAGLE_VER
 Categories=Graphics
 Type=Application
 Terminal=false
-Exec=env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 /$HOME/eagle-$EAGLE_VER/eagle
+Exec=env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 $HOME/eagle-$EAGLE_VER/eagle
 Name=Eagle
 Comment=Eagle
 Icon=/$HOME/eagle-$EAGLE_VER/bin/eagle-logo.png
