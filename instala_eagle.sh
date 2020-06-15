@@ -11,7 +11,7 @@ wget -q --show-progress --content-disposition https://www.autodesk.com/eagle-dow
 EAGLE=$(ls Autodesk_EAGLE*.tar.gz)                    # Nome do arquivo compactado
 EAGLE_VER=$(echo $EAGLE | grep -Po "\d+\.\d+\.\d+")   # Versão do EAGLE
 EAGLE_DESKTOP="$(xdg-user-dir DESKTOP)/EAGLE.desktop" # Caminho do atalho da área de trabalho
-EAGLE_MENU="$HOME/.local/share/applications/EAGLE.desktop" # Caminho do atalho da área de trabalho
+EAGLE_MENU="$HOME/.local/share/applications/" # Caminho do ícone
 
 # Descompacta EAGLE
 echo "Descompactando EAGLE..."
@@ -30,7 +30,9 @@ Exec=env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0 $HOME/eagle-$EAGL
 Name=Eagle
 Comment=Eagle
 Icon=$HOME/eagle-$EAGLE_VER/bin/eagle-logo.png
-" | tee "$EAGLE_DESKTOP" "$EAGLE_MENU" >/dev/null  # Cria ícones
+" > "$EAGLE_DESKTOP"  # Cria ícone na área de trabalho
+mkdir -p "$EAGLE_MENU"
+cp "$EAGLE_DESKTOP" "$EAGLE_MENU" # Cria ícone no menu
 chmod +x "$EAGLE_DESKTOP"                        # Torna o atalho executável
 gio set "$EAGLE_DESKTOP" "metadata::trusted" yes # Marca arquivo de atalho como confiável
 
