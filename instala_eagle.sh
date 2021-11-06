@@ -5,7 +5,7 @@ rm -f Autodesk_EAGLE*.tar.gz
 
 # Baixa EAGLE compactado
 echo "Baixando EAGLE..."
-wget -q --show-progress --content-disposition https://www.autodesk.com/eagle-download-lin
+wget --user-agent="Mozilla" -q --show-progress --content-disposition https://www.autodesk.com/eagle-download-lin
 
 # Variáveis
 EAGLE=$(ls Autodesk_EAGLE*.tar.gz)                    # Nome do arquivo compactado
